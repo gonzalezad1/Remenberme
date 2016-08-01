@@ -1,0 +1,17 @@
+<%= form_for @user do |f| %>
+  <%= f.label :fullname %><br />
+  <%= f.text_field :fullname %><br />
+  <%= f.label :nickname %><br />
+  <%= f.text_field :nickname %><br />
+  <%= f.label :phone_number %><br />
+  <%= f.text_field :phone_number %><br />
+  <%= f.label :email %><br />
+  <%= f.text_field :email %><br />
+  <%= f.label :password %><br />
+  <%= f.text_field :password %><br />
+  <%= f.label :description %><br />
+  <%= f.text_field :description %><br />
+  <%= f.label :interest %><br />
+  <%= f.text_field :interest %><br />
+<%= f.submit %>
+      <% end %>

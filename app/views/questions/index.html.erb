@@ -1,0 +1,5 @@
+<% @question.each do |q| %>
+<% if q.user_id == current_user.id %>
+<%= q.question_title %>
+<% end %> <br>
+<% end %>
