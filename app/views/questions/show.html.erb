@@ -1,0 +1,7 @@
+
+<%= @question.question_title %>
+<% @answer.each do |a| %>
+<% if @question.id == a.question_id %>
+	<%= a.answer_body %>
+	<% end %>
+	<% end %>

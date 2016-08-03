@@ -1,5 +1,16 @@
 <% @question.each do |q| %>
 <% if q.user_id == current_user.id %>
 <%= q.question_title %>
-<% end %> <br>
-<% end %>
+<a href="/questions/<%= q.id %>/answers">show answers already done</a>
+
+
+
+<% else %>
+<%= q.question_title %>
+<a href="/questions/<%= q.id %>/answers/new">add answer</a>
+<a href="/questions/<%= q.id %>/answers">show answers already done</a>
+
+
+<% end %> 
+<br>
+<% end %> 

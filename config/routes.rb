@@ -2,10 +2,16 @@ Rails.application.routes.draw do
 
 get 'home/index'
 
-resources :questions
-resources :answers
+resources :questions do 
+  resources :answers do
+    resources :comments
+  end
+end
 resources :comments
+ get 'questions/all' => "questions#all"
+resources :mysummits
 
+get 'question_themes/index'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

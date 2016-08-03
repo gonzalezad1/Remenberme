@@ -20,3 +20,4 @@ class UsersController < ApplicationController
  	params.require(:user).permit(:fullname,:nickname, :phone_number,:email,:password,:description,:interest)
 end
 end
+
