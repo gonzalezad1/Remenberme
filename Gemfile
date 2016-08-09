@@ -24,8 +24,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'figaro'
+gem 'omniauth-facebook'
 
-
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

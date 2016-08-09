@@ -1,7 +1,16 @@
 <% @question.question_title %>
-<% @answer.each do |a| %>
-<% if a.question_id == Question.id %>
-<%= a.answer_body %>
+<%= @answer.answer_body %>
 
-<% end %>
-<% end %>
+<% if current_user.voted_up_on? @answer  %>
+      <%= link_to "Dislike", dislike_question_answer_path, class: 'vote', method: :put %>      
+  <% else %>
+      <%= link_to "Like", like_question_answer_path, class: 'vote', method: :put %>
+  <% end %>
+
+
+  <span> · </span>
+
+
+<%= @answer.get_likes.size %> users like this
+<br>
+

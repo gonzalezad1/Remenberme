@@ -1,5 +1,9 @@
 <%= @question.question_title %> <br>
 <% @answer.each do |a| %>
+<% if a.question_id == @question.id %>
 <%= a.answer_body %>
+<a href="/questions/<%= params[:question_id] %>/answers/<%= a.id %>">add 
+comments</a>
 <br>
+<% end %>
 <% end %>

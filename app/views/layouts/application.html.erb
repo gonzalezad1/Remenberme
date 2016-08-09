@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1080540658695760";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,19 +28,38 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        <% if signed_in? %>
         <li class="active"><a href="users/<%= current_user.id%>">Profile</a></li>
         <li><a href="/question_themes/index">Question</a></li>
         <li><a href="#">Answer</a></li>
         <li><a href="#">Get prenium</a></li>
+        <% else %> 
+        <li><a href="/question_themes/index">Question</a></li>
+        <li><a href="#">Answer</a></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <% #if current_user.id != nil %>
+        <% if signed_in? %>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% else %> 
+        <li><a href="/users/sign_up"> Sign Up</a></li>
+        <li><a href="/users/sign_in"> Login</a></li>
+        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+        <% end %>
       </ul>
     </div>
   </div>
 </nav>
 <%= yield %>
 
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+
 </body>
 </html>
+
+
+
+
+    
+

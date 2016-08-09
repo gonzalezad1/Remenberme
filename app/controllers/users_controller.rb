@@ -14,7 +14,10 @@ class UsersController < ApplicationController
      render 'edit'
    end
  end
-
+def destroy
+	redirect_to root_path
+   else
+end
 
  def permit_params
  	params.require(:user).permit(:fullname,:nickname, :phone_number,:email,:password,:description,:interest)

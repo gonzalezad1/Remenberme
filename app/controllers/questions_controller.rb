@@ -13,8 +13,13 @@ class QuestionsController < ApplicationController
 		end
 	end
 	def index
-		@question = Question.all 
+		
+  	@search = Question.search do
+    fulltext params[:search]
+  		end
+  	@question = @search.results
 	end
+
 	def all
 		@question = Question.all 
 	end
