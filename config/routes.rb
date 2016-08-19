@@ -16,7 +16,7 @@ resources :comments
 resources :mysummits
 
 get 'question_themes/index'
-
+match 'tagged', to: 'questions#tagged', :as => 'tagged', via: 'get'
   devise_for :users,
   :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.

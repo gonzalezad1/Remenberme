@@ -22,5 +22,8 @@ end
  def permit_params
  	params.require(:user).permit(:fullname,:nickname, :phone_number,:email,:password,:description,:interest)
 end
+ def user_params
+    params.require(:user).permit(:name, :tag_list) ## Rails 4 strong params usage
+  end
 end
 

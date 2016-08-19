@@ -1,10 +1,12 @@
 class QuestionsController < ApplicationController
 	def new
 		@question = Question.new
+
 	end
 
 	def create
 		@question =  Question.new(questions_params)
+		@question.tag_list = questions_params[:tag_list]
 		if @question.save
 			redirect_to root_path
 
@@ -12,12 +14,17 @@ class QuestionsController < ApplicationController
 		redirect_to new_question_path 
 		end
 	end
+	
 	def index
-		
+		 if params[:tag]
+      @question = Question.tagged_with(params[:tag])
+
+    	else
   	@search = Question.search do
     fulltext params[:search]
-  		end
+  							end
   	@question = @search.results
+		end
 	end
 
 	def all
@@ -25,11 +32,24 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
+		if params[:tag]
+      @question = Question.tagged_with(params[:tag])
+  else
 		@question = Question.find(params[:id]) 
 		@answer = Answer.new
+end
 	end
 
  def questions_params
-    params.require(:question).permit(:question_title,:user_id)
+    params.require(:question).permit(:question_title,:user_id, :tag_list,:name)
   end
+ 
+ def tagged
+    if params[:tag].present? 
+      @question = Question.tagged_with(params[:tag])
+    else 
+      @question = Question.postall
+    end  
+ end
+
 end

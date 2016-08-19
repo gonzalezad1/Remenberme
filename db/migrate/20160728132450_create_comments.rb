@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
     	t.integer :answer_id
     	t.integer :user_id
     	t.text :comment_body
+    	t.timestamps
     end
   end
 end

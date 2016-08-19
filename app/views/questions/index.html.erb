@@ -1,23 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
+	<div class="row">
 <%= form_tag questions_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :question_title => nil %>
   </p>
 <% end %>
-
-
-
+</div>
+<div class="row">
 <% @question.each do |q| %>
 <% if q.user_id == current_user.id %>
 <%= q.question_title %>
 <a href="/questions/<%= q.id %>/answers">show answers already done</a>
-
+<%= q.tag_list %>
 
 
 <% else %>
 <%= q.question_title %>
 <a href="/questions/<%= q.id %>/answers/new">add answer</a>
 <a href="/questions/<%= q.id %>/answers">show answers already done</a>
+<%= q.tag_list %>
+
 
 
 <% end %> 
@@ -25,6 +33,6 @@
 <% end %> 
 
 
-
+</div>
 
 

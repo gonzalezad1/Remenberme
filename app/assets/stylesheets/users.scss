@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#footer {
+   position:absolute;
+   text-align:center;
+   text-color:#FFFAF0; 
+   bottom:0;
+   width:100%;
+   height:30px;   /* Height of the footer */
+   background:#000000;
+}
+
+#bg {
+
+  /* Preserve aspet ratio */
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}

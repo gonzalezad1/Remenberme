@@ -27,6 +27,7 @@ gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'omniauth-facebook'
 
+gem 'font-awesome-sass'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'acts_as_votable', '~> 0.10.0'

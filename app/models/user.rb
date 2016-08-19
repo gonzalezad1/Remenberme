@@ -10,7 +10,13 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
+
     acts_as_voter
+      acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :skills, :interests
+
+  has_many :tags
+
 
   def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
