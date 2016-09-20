@@ -6,11 +6,26 @@
 <br>
 <br>
 
-<% @question.each do |q| %>
-<% if q.user_id == current_user.id %>
-<%= q.question_title %>
+<ul class="list-group">
+	<%i = 0%>
+		<% @question.each do |q| %>
+	<% if i%2 ==0 %>
+		<li class="list-group-item list-group-item-info">
+			<% if q.user_id == current_user.id %>
+				<%= q.question_title %>
+				<a href="/questions/<%=q.id%>/answers" class="btn btn-primary" role="button">Show</a>
+				<% i=i+1%>
+			<% end %>
+		<%else%>
+				<li class="list-group-item">
+				<% if q.user_id == current_user.id %>
+				<%= q.question_title %>
+				<a href="/questions/<%=q.id%>/answers" class="btn btn-primary" role="button">Show</a>
+				<% i=i+1%>
+		<% end %>
 <% end %> <br>
-<% end %>
 
-</div>
-</div>
+</li>
+<br>
+<% end %>
+</ul>

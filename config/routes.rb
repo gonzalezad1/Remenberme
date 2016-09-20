@@ -24,6 +24,9 @@ match 'tagged', to: 'questions#tagged', :as => 'tagged', via: 'get'
   root to: 'home#index'
 
 resources :users
+resources :transactions, only: [:new, :create]
+   get "/transactions" => 'transactions#show', as: "transaction"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

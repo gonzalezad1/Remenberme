@@ -70,7 +70,7 @@ body {
 }
 .thumbnail{
   width: 100%;
-  height: auto;
+  height: 600px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -83,3 +83,37 @@ body {
 
 .row-bottom-margin { margin-bottom:0px; }
 .row-top-margin { margin-top:0px; }
+
+
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+footer {
+      background-color: #000;
+      color: white;
+      padding: 10px;
+    }
+.navbar {
+      margin-bottom: 0;
+      background-color: #00000;
+      color:#f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat;
+      }
+  .navbar li a, .navbar .navbar-brand {
+      color: #f4511e !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }

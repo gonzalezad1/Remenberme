@@ -24,6 +24,8 @@ class QuestionsController < ApplicationController
     fulltext params[:search]
   							end
   	@question = @search.results
+
+  	@answer = Answer.all
 		end
 	end
 

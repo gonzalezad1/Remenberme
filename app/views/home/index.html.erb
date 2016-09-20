@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -47,32 +46,38 @@
 <br>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6 col-sm-4">
+    <div class="col-sm-6">
       <div class="thumbnail">
          <img src="http://localhost:3000/assets/<%=rand(1..6)%>.jpeg" alt="...">
       <div class="caption">
       <div class="well">
       <% #byebug %>
-      <% offset = rand((Question.count)) %>
-   <h3><% question = Question.find_by_id(offset) %> </h3>
+      <% offset = rand((Question.count)-2) %>
+   <h3><% question = Question.find_by_id(offset+2) %> </h3>
    <% if question.try(:question_title?) %>
    <h3><%= question.question_title %></h3>
       <p>
         <% @answer.each do |a| %>
 <% if question.id == a.question_id %>
+  <div class="truncate">
   <%= a.answer_body %>
+</div>
+  <%else%>
+  <br>
 
   <% end %>
 <% end %>
   <% end %>
       </p>
-      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
+ <% if question.try(:id?) %>
+
+      <p><a href="/questions/<%=question.id%>/answers" class="btn btn-primary" role="button">Button</a> </p>      </div>
+<%end%>
     </div>
   </div>
 </div>
        
-   <div class="col-sm-4">
+   <div class="col-sm-6">
       <div class="thumbnail">
          <img src="http://localhost:3000/assets/<%=rand(1..6)%>.jpeg" alt="...">
       <div class="caption">
@@ -87,48 +92,23 @@
       <p>
         <% @answer.each do |a| %>
 <% if question.id == a.question_id %>
+  <div class="truncate">
   <%= a.answer_body %>
+</div>
 
+  <%else%>
+  <br>
   <% end %>
 <% end %>
   <% end %>
+ <% if question.try(:id?) %>
 
      </p>
-      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
+      <p><a href="/questions/<%=question.id%>/answers" class="btn btn-primary" role="button">Button</a> </p></div>
+<%end%>
     </div>
   </div>
 </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-         <img src="http://localhost:3000/assets/7.jpeg" alt="...">
-      <div class="caption">
-      <div class="well">
-      <% #byebug %>
-     <% offset = rand((Question.count)) %>
-   <h3><% question = Question.find_by_id(offset) %> </h3>
-    <% if question.try(:question_title?) %>
-   <h3><%= question.question_title %></h3>
-      <p>
-        <% @answer.each do |a| %>
-<% if question.id == a.question_id %>
-  <%= a.answer_body %>
-
-  <% end %>
-    <% end %>
-      <% end %>
-      </p>
-      <% if question.try(:id?) %>
-
-      <p><a href="/questions/<%=question.id%>/answers" class="btn btn-primary" role="button">Button</a> <a href="" class="btn btn-default" role="button">Button</a></p>
-      <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-    </div>
 <br>
  <div class="container">
   <h3 class="text-center">Contact</h3>
@@ -136,7 +116,7 @@
   <div class="row test">
     <div class="col-md-4">
       <p></p>
-      <p><span class="glyphicon glyphicon-map-marker"></span></p>
+     
       <p><span class="glyphicon glyphicon-phone"></span>Phone: +00000000</p>
       <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
     </div>

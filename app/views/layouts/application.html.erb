@@ -48,8 +48,13 @@
           <li><a href="/questions"> Show all questions</a></li>
         </ul>
       </li>
-        <li><a href="#">Answer</a></li>
-        <li><a href="#">Get prenium</a></li>
+      <li class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="/users/<%= current_user.id %>/answers">Answers
+        <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+        <li><a href="/questions/new">  My Answer</a></li>
+        </ul>
+      </li>
         <% else %> 
               
         <% end %>
@@ -59,7 +64,6 @@
         <% if signed_in? %>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %> 
-        <li><a href="/users/sign_up"> Sign Up</a></li>
         <li><a href="/users/sign_in"> <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>
 </a></li>
         <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
@@ -70,8 +74,6 @@
 </nav>
 </div>
  
-
-
 
 <%= yield %>
 

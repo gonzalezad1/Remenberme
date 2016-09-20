@@ -26,10 +26,12 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'omniauth-facebook'
-
+gem 'stripe'
+gem 'braintree', '~> 2.33.1'
 gem 'font-awesome-sass'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'gon'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 
