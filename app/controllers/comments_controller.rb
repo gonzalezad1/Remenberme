@@ -16,6 +16,6 @@ def show
 end
 
 def permit_params
-	params.require(:comment).permit(:user_id, :answer_id, :comment_body)
+	params.require(:comment).permit(:user_id,:answer_id, :comment_body,:question_id)
 end
 end

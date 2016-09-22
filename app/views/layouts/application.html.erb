@@ -16,16 +16,16 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
- <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+   <div class="col-sm-12">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Remenberme</a>
+      <a class="navbar-brand" href="/">Rememberme</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -34,8 +34,8 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="users/<%= current_user.id%>">Profile
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="/users/<%= current_user.id %>">  Show my profile</a></li>
-          <li><a href="/users/<%= current_user.id %>/edit"> Edit my profile</a></li>
+          <li><a href="/users/<%= current_user.id %>">  My profile</a></li>
+          <li><a href="/users/<%= current_user.id %>/edit"> Edit Profile</a></li>
           </ul>
       </li>
 
@@ -44,16 +44,19 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/questions/new">  New Question ?</a></li>
-          <li><a href="/mysummits"> Show my questions summited</a></li>
-          <li><a href="/questions"> Show all questions</a></li>
+          <li><a href="/mysummits"> My questions</a></li>
+          <li><a href="/questions"> All questions</a></li>
         </ul>
       </li>
       <li class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="/users/<%= current_user.id %>/answers">Answers
         <span class="caret"></span></a>
          <ul class="dropdown-menu">
-        <li><a href="/questions/new">  My Answer</a></li>
+        <li><a href="/questions/new">  My Answers</a></li>
         </ul>
+      </li>
+       <li class="dropdown">
+         <a href="/mysummits">Submits</a>
       </li>
         <% else %> 
               
@@ -70,9 +73,10 @@
         <% end %>
       </ul>
     </div>
+ </div>
   </div>
 </nav>
-</div>
+
  
 
 <%= yield %>

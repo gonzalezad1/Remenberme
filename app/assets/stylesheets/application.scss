@@ -5,7 +5,7 @@
 
 html,
 body {
-   margin:0;
+   margin:-8px;
    padding:0;
    height:100%;
 }
@@ -109,6 +109,7 @@ footer {
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat;
+      
       }
   .navbar li a, .navbar .navbar-brand {
       color: #f4511e !important;
@@ -117,3 +118,28 @@ footer {
       color: #f4511e !important;
       background-color: #fff !important;
   }
+
+  .jumbotron {
+      background-color:#f4511e !important;
+      
+      color: #fff;
+      padding: 60px 20px;
+    background-image: url(http://localhost:3000/assets/essai15.jpeg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#f4511e;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    margin-bottom:5px;
+      
+  }
+.well {
+  text:center;
+}
+
+.overflow {
+     width: 250px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}

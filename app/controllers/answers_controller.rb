@@ -29,16 +29,20 @@ class AnswersController < ApplicationController
 	end
 	
 	def index
+		
 		@answer = Answer.all
 		@question = Question.find(params[:question_id])
 	end
 
 	def show
+
 		@answer = Answer.find(params[:id])
 	@question = Question.find(params[:question_id])
+		@comment = Comment.new
+		@commented = Comment.all
 	end
 
 	def permits_parameters
-	params.require(:answer).permit(:question_id,:user_id, :answer_body)
+	params.require(:answer).permit(:question_id,:user_id, :answer_body, :answer_id)
 	end
 end

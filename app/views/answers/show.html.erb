@@ -2,8 +2,8 @@
 <br>
 <br>
 <br>
-<% @question.question_title %>
-<%= @answer.answer_body %>
+<div class ="container">
+	<div class="row">
 
 <% if current_user.voted_up_on? @answer  %>
       <%= link_to "Dislike", dislike_question_answer_path, class: 'vote', method: :put %>      
@@ -11,10 +11,40 @@
       <%= link_to "Like", like_question_answer_path, class: 'vote', method: :put %>
   <% end %>
 
-
-  <span> · </span>
-
-
-<%= @answer.get_likes.size %> users like this
+<br>
 <br>
 
+<h2> Complete answer</h2>
+<%= @question.question_title %>
+<%= @answer.answer_body %>
+<% @commented.each do |a|%>
+<%if @answer.id = a.answer_id%>
+<%= a.comment_body%>
+<%end%> 
+<%end%> 
+
+
+
+
+<br>
+
+
+
+<br>
+<%= form_for @comment do |a| %>
+<%= a.label :comment_body %>
+<br>
+
+<%= a.text_area :comment_body%> 
+<%=a.hidden_field :user_id, value: current_user.id %>  
+<%=a.hidden_field :answer_id, value: params[:id] %> 
+<%=a.hidden_field :question_id, value: params[:question_id] %> 
+
+<br>
+<%= a.submit %>
+
+
+<br>
+<%end%>
+</div>
+</div>

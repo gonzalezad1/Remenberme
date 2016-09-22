@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 #get 'home/index'
 
-resources :questions do 
+resources :questions do
   resources :answers do
     resources :comments
     member do

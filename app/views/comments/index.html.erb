@@ -1,0 +1,23 @@
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= form_for @comment, url: new_question_answer_comment_path do |a| %>
+<%= a.label :comment_body %>
+<br>
+
+<%= a.text_area :comment_body%> 
+<%=a.hidden_field :user_id, value: current_user.id %>  
+<%=a.hidden_field :answer_id, value: params[:id] %> 
+<%=a.hidden_field :question_id, value: params[:question_id] %> 
+
+<br>
+<%= a.submit %>
+
+
+<br>

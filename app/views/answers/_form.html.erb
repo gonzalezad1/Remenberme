@@ -4,8 +4,11 @@
 <br>
 <%= form_for @answer, url: question_answers_path do |a| %>
 <%= a.label :answer_body %>
-<%= a.text_field :answer_body %>
+<br>
+
+<%= a.text_area :answer_body%> 
 <%=a.hidden_field :user_id, value: current_user.id %>  
 <%=a.hidden_field :question_id, value: params[:question_id] %> 
+<br>
 <%= a.submit %>
 <% end %>
