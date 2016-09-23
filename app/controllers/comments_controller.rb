@@ -14,7 +14,23 @@ class CommentsController < ApplicationController
 def show
 	@comment = Comment.find(params[:id])
 end
-
+def edit
+		@comment= Comment.find(params[:id])
+	end
+	 def update
+   @comment = Comment.find(params[:id])
+   if @comment.update(permit_params)
+     redirect_to questions_path
+   else
+     render 'edit'
+   end
+ end
+def destroy
+	@comment = Comment.find(params[:id])
+    @comment.destroy
+	redirect_to questions_path
+   else
+end
 def permit_params
 	params.require(:comment).permit(:user_id,:answer_id, :comment_body,:question_id)
 end

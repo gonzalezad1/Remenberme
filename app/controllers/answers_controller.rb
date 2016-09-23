@@ -29,7 +29,7 @@ class AnswersController < ApplicationController
 	end
 	
 	def index
-		
+
 		@answer = Answer.all
 		@question = Question.find(params[:question_id])
 	end
@@ -41,6 +41,24 @@ class AnswersController < ApplicationController
 		@comment = Comment.new
 		@commented = Comment.all
 	end
+	def edit
+		@answer= Answer.find(params[:id])
+	end
+	 
+	 def update
+   @answer = Answer.find(params[:id])
+   if @answer.update(permits_parameters)
+     redirect_to question_answer_path
+ else
+     render 'edit'
+   end
+ 	end
+def destroy
+	@answer = Answer.find(params[:id])
+    @anwser.destroy
+	redirect_to questions_path
+   else
+end
 
 	def permits_parameters
 	params.require(:answer).permit(:question_id,:user_id, :answer_body, :answer_id)

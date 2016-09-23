@@ -14,6 +14,24 @@ class QuestionsController < ApplicationController
 		redirect_to new_question_path 
 		end
 	end
+
+	def edit
+		@question= Question.find(params[:id])
+	end
+	 def update
+   @question = Question.find(params[:id])
+   if @question.update(questions_params)
+     redirect_to questions_path
+   else
+     render 'edit'
+   end
+ end
+def destroy
+	@question = Question.find(params[:id])
+    @question.destroy
+	redirect_to questions_path
+   else
+end
 	
 	def index
 		 if params[:tag]

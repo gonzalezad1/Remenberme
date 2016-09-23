@@ -1,0 +1,18 @@
+ <br>
+ <br>
+ <br>
+ <body background="http://localhost:3000/assets/flat-landscape.jpg" id="bg" >
+<div align="center">
+<div class="mydiv">
+<%= form_for @answer, url: question_answer_path do |a| %>
+<%= a.label :answer_body %>
+<br>
+
+<%= a.text_area :answer_body%> 
+<%=a.hidden_field :user_id, value: current_user.id %>  
+<%=a.hidden_field :question_id, value: params[:question_id] %> 
+<br>
+<%= a.submit %>
+<% end %>>
+</div>
+</div>
