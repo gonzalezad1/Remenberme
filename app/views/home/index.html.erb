@@ -43,36 +43,7 @@
 
 <br>
 <br>
-<div class = "container-fluid text-center">
-        <h3> Random Question! Discover the Answer :) </h3>
-  <div class= "col-sm-10">
-        <% q=0%>
-      <% while q<5 do %>      
-    <div class="row">
 
-      <div class="col-sm-2">
-          <div class="well">
-            <img src="http://localhost:3000/assets/<%=rand(1..6)%>.jpeg" class="img-circle" height="55" width="55" alt="Avatar">
-           
-          </div>
-      </div>
-      <div class="col-sm-8">
-          <div class="well">       
-            <% offset = rand((Question.count))+3 %>
-            <h3><% question = Question.find_by_id(offset) %> </h3>
-              <% if question.try(:question_title?) %>
-              <% if question.try(:id?) %>
-              <p><a href="/questions/<%=question.id%>/answers"><%= question.question_title %></a> </p>
-              <% q = q+1 %>
-              <% end %>       
-              <% end %>
-                 
-            
-          </div>     
-      </div>
-        </div>
-        <%end%>
-        </div>
   <div class="col-sm-2">
      <div class="well">
         <p>ADVERTISEMENT</p>
