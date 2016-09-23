@@ -32,6 +32,7 @@ gem 'font-awesome-sass'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'gon'
+gem 'rails_12factor'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 
