@@ -47,20 +47,20 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
-    <div class="col-sm-7">
     
+    <div class="col-sm-7">
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p>              	
-				<% if current_user.voted_up_on? @answer  %>
-      				<%= link_to "Dislike", dislike_question_answer_path, class: 'vote', method: :put %>      
-  				<% else %>
-      					<%= link_to "Like", like_question_answer_path, class: 'vote', method: :put %>
-				  <% end %>
+				        <% if current_user.voted_up_on? @answer  %>
+      				      <%= link_to "Dislike", dislike_question_answer_path, class: 'vote', method: :put %>      
+        				<% else %>
+          					<%= link_to "Like", like_question_answer_path, class: 'vote', method: :put %>
+				        <% end %>
   				
-				</p>    
+				      </p>    
             </div>
           </div>
         </div>
@@ -71,38 +71,37 @@
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p>              	
-				<h2> Complete answer</h2>
-				<%= @question.question_title %>
-  				
-				</p>    
+				        <h2> Complete answer</h2>
+	           			<%= @question.question_title %>
+      				</p>    
             </div>
           </div>
         </div>
       </div>
+      
        <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p>              	
-				<%= @answer.answer_body %>
-  				
-				</p>    
+			         	<%= @answer.answer_body %>
+      				</p>    
             </div>
           </div>
         </div>
       </div>
- <div class="row">
+      
+      <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p>              	
-				<% @commented.each do |a|%>
-				<%if @answer.id = a.answer_id%>
-				<%= a.comment_body%>
-				<%end%> 
-				<%end%>
-  				
-				</p>    
+			         	<% @commented.each do |a|%>
+			           	<%if @answer.id = a.answer_id%>
+			             	<%= a.comment_body%>
+	           			<%end%> 
+				        <%end%>
+	       			</p>    
             </div>
           </div>
         </div>
@@ -113,30 +112,23 @@
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p>              	
-				<%= form_for @comment do |a| %>
-					<%= a.label :comment_body %>
-				<br>
-
-				<%= a.text_area :comment_body%> 
-				<%=a.hidden_field :user_id, value: current_user.id %>  
-				<%=a.hidden_field :answer_id, value: params[:id] %> 
-				<%=a.hidden_field :question_id, value: params[:question_id] %> 
-					<br>
-				<%= a.submit %>
-				<br>
-				<%end%>
-  				
-				</p>    
+        				<%= form_for @comment do |a| %>
+			       		 <%= a.label :comment_body %>
+				          <br>
+        				  <%= a.text_area :comment_body%> 
+				          <%=a.hidden_field :user_id, value: current_user.id %>  
+        				  <%=a.hidden_field :answer_id, value: params[:id] %> 
+				          <%=a.hidden_field :question_id, value: params[:question_id] %> 
+					         <br>
+				          <%= a.submit %>
+				          <br>
+				        <%end%>
+				      </p>    
             </div>
           </div>
         </div>
-      </div>
-		
-		
-
-     
-       
- </div>
+      </div>       
+    </div>
     <div class="col-sm-2 well">   
       <div class="well">
         <p>ADS</p>
@@ -152,5 +144,5 @@
   <p>Copyright@2016 by Adrien Gonzalez</p>
 </footer>
 
-</body>
+  </body>
 </html>

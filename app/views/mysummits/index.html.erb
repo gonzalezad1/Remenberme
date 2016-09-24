@@ -53,37 +53,29 @@
     	<div class="color_h2">
     	<h1> My Questions submited </h1>
 		</div>
-    <% @question.each do |q| %>
-    <% if q.user_id == current_user.id %>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-            <div class="panel-body">
-              <p >
-				<%= q.question_title %>
-				<a href="/questions/<%=q.id%>/answers" class="btn btn-primary" role="button">Show</a>
-				<a href="/questions/<%=q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
-				<%= link_to 'Delete',  question_path(q), method: :delete, data: { confirm: 'Are you sure?' } %>
-							
-			
-			 <br>
-  				</p>
-      
+      <% @question.each do |q| %>
+        <% if q.user_id == current_user.id %>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default text-left">
+              <div class="panel-body">
+                <p >
+			         	 <%= q.question_title %>
+				          <a href="/questions/<%=q.id%>/answers" class="btn btn-primary" role="button">Show</a>
+  				        <a href="/questions/<%=q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
+          				<%= link_to 'Delete',  question_path(q), method: :delete, data: { confirm: 'Are you sure?' } %>			
+                  <br>
+  		  		    </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-     <% end %>	
-<% end %> 
-
-
-
-
-				
-<br>
-<div class="color_h2">
-<h1> My Answers submited </h1>
-</div>
+        <% end %>	
+      <% end %> 		
+      <br>
+  <div class="color_h2">
+    <h1> My Answers submited </h1>
+  </div>
    <% @answer.each do |q| %>
     <%if q.user_id == current_user.id %>
       <div class="row">
@@ -91,45 +83,40 @@
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p >
-				<%= q.answer_body %>
-				<a href="/questions/<%=q.question_id%>/answers/<%=q.id%>" class="btn btn-primary" role="button">Show</a>
-			<a href="/questions/<%=q.question_id%>/answers/<%=q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
-				<%= link_to 'Delete',  question_answers_path(q), method: :delete, data: { confirm: 'Are you sure?' } %>
-			
-			 <br>
-  				</p>
-      
+	         			<%= q.answer_body %>
+			         	<a href="/questions/<%=q.question_id%>/answers/<%=q.id%>" class="btn btn-primary" role="button">Show</a>
+		          	<a href="/questions/<%=q.question_id%>/answers/<%=q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
+        				<%= link_to 'Delete',  question_answers_path(q), method: :delete, data: { confirm: 'Are you sure?' } %>
+        			 <br>
+  			     	</p>
             </div>
           </div>
         </div>
       </div>
-     <% end %>	
-<% end %> 
-
-<br>
-<div class="color_h2">
-<h1> My Comments submited </h1>
-</div>
-   <% @comment.each do |q| %>
-<%if q.user_id == current_user.id %>
+    <% end %>	
+  <% end %> 
+  <br>
+    <div class="color_h2">
+      <h1> My Comments submited </h1>
+    </div>
+    <% @comment.each do |q| %>
+      <%if q.user_id == current_user.id %>
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p >
-				<%= q.comment_body %>
-				<a href="/questions/<%=q.question_id%>/answers/<%=q.answer_id%>" class="btn btn-primary" role="button">Show</a>
-			<a href="/questions/<%=q.question_id%>/answers/<%=q.answer_id%>/comments/<%= q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
-				
-			 <br>
-  				</p>
-      
+		        		<%= q.comment_body %>
+		        		<a href="/questions/<%=q.question_id%>/answers/<%=q.answer_id%>" class="btn btn-primary" role="button">Show</a>
+          			<a href="/questions/<%=q.question_id%>/answers/<%=q.answer_id%>/comments/<%= q.id%>/edit" class="btn btn-primary" role="button">Edit</a>
+        			 <br>
+  			     	</p>
             </div>
           </div>
         </div>
       </div>
-     <% end %>	
-<% end %>     
+      <% end %>	
+    <% end %>     
    </div>
 
 
@@ -145,9 +132,9 @@
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Copyright@2016 by Adrien Gonzalez</p>
-</footer>
+  <footer class="container-fluid text-center">
+    <p>Copyright@2016 by Adrien Gonzalez</p>
+  </footer>
 
 </body>
 </html>

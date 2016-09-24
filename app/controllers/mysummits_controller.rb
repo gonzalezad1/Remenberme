@@ -6,9 +6,8 @@ class MysummitsController < ApplicationController
 		@comment = Comment.all
 	
 	end
- def questions_params
-    params.require(:question).permit(:question_title,:user_id)
-  end
 
-
+    def questions_params
+   	   params.require(:question).permit(:question_title,:user_id)
+  	end
 end

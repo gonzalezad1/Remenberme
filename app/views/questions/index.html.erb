@@ -13,21 +13,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- 
-
-
  <!-- BOOTSTRAP -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"> </script>
-  <style>    
-    /* Set black background color, white text and some padding */
-    
-  </style>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"> </script>
 </head>
 <body background="http://localhost:3000/assets/essai17.png" id="bg">
  
 <div class="container text-center">
-
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
@@ -61,11 +53,7 @@
           <div class="panel panel-default text-left">
             <div class="panel-body">
               <p contenteditable="true">
-          <%= form_tag questions_path, :method => :get do %>
-    			<%= text_field_tag :search, params[:search] %>
-    			<%= submit_tag "Search", :question_title => nil %>
-  				
-				<% end %></p>
+				</p>
               <button type="button" class="btn btn-default btn-sm">
                 <span class="glyphicon glyphicon-thumbs-up"></span> Like
               </button>     
@@ -92,10 +80,7 @@
           </div>
         </div>
       </div>
-		
-		
-		
-<% end %> 
+    <% end %> 
 
      
        
