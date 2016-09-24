@@ -39,10 +39,15 @@
     </div>
   </div>
 </div>
+
 <div class = "container-fluid text-center">
+  <% if Question.where(id: -1).nil? == true%>
+    <h1>Please login </h1>
+<%else%>
   <h3> Random Question! Discover the Answer :) </h3>
   <div class= "col-sm-10">
     <% q=0%>
+
     <% while q<5 do %>      
     <div class="row">
       <div class="col-sm-2">
@@ -66,6 +71,7 @@
     </div>
     <%end%>
   </div>
+  <%end%>
   <br>
   <br>
 
