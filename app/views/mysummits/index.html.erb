@@ -42,7 +42,7 @@
     </div>
     <div class="col-sm-7">
     	<div class="color_h2">
-    	<h1> My Questions submited </h1>
+    	<h1> My Questions submitted </h1>
 		</div>
       <% @question.each do |q| %>
         <% if q.user_id == current_user.id %>
@@ -65,7 +65,7 @@
       <% end %> 		
       <br>
   <div class="color_h2">
-    <h1> My Answers submited </h1>
+    <h1> My Answers submitted </h1>
   </div>
    <% @answer.each do |q| %>
     <%if q.user_id == current_user.id %>
@@ -88,7 +88,7 @@
   <% end %> 
   <br>
     <div class="color_h2">
-      <h1> My Comments submited </h1>
+      <h1> My Comments submitted </h1>
     </div>
     <% @comment.each do |q| %>
       <%if q.user_id == current_user.id %>
