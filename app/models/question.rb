@@ -8,9 +8,5 @@ class Question < ActiveRecord::Base
 
     has_many :tags, through: :tag_list
 
-	searchable do
-  		text :question_title, :boost => 5
-  		text :tag_list
-  			   end
 
 end
