@@ -61,9 +61,10 @@
              <% if question.try(:question_title?) %>
               <% if question.try(:id?) %>
                 <p><a href="/questions/<%=question.id%>/answers"><%= question.question_title %></a> </p>
-                <% q = q+1 %>
+                
               <% end %>       
-            <% end %>            
+            <% end %> 
+            <% q = q+1 %>           
         </div>     
       </div>
     </div>
@@ -74,18 +75,26 @@
 
   <div class="col-sm-2">
      <div class="well">
-        <p>ADVERTISEMENT</p>
-        <p>ADVERTISEMENT</p>
-        <p>ADVERTISEMENT</p>
-        <p>ADVERTISEMENT</p>
-        <p>ADVERTISEMENT</p>
-        <p>ADVERTISEMENT</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>ADS</p>
+        <br>
+        <br>
+        <br>
+        <br>
+
      </div> 
      <div class="well">
         <p>ADS</p>
      </div>
      <div class="well">
+        <br>
+        <br>
         <p>ADS</p>
+        <br>
+        <br>
     </div>
   </div>
         <br>

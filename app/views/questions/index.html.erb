@@ -15,39 +15,34 @@
 
 <div class="container text-center">
   <div class="row">
-    <div class="col-sm-3 well">
-      <div class="well">
-        <p><a href="#"><%current_user.fullname%></a></p>
-        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-      </div>
-      <div class="well">
-        <p><a href="#">Interests</a></p>
-        <p>
-          <span class="label label-default">News</span>
-          <span class="label label-success">Labels</span>
-          <span class="label label-info">Football</span>
-          <span class="label label-warning">Gaming</span>
-          <span class="label label-danger">Friends</span>
-        </p>
-      </div>
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <p><strong>Ey!</strong></p>
-        People are looking at your profile. Find out who.
-      </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+       <div class="col-sm-2 well">
+      <%i=0%>
+      <% while i<5 %>
+        <div class="well">
+          <%j=0%>
+          <%h=0%>
+            <%while j< rand(1..9)%>
+              <br>
+              <%j=j+1 %>
+            <%end%>
+          <p>ADS</p>
+            <%while h < j%>
+              <br>
+              <%h=h+1 %>
+            <%end%>
+        </div>
+      <%i=i+1 %>
+      <%end%>
     </div>
-    <div class="col-sm-7">
-    
+
+    <div class="col-sm-8">
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
-              <p contenteditable="true">
-				</p>
-              <h1> All Questions already posted </h1>   
+              <div align="center">
+              <h1> All Questions already posted </h1> 
+              </div>  
             </div>
           </div>
         </div>
@@ -76,13 +71,24 @@
      
        
     </div>
-    <div class="col-sm-2 well">   
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+       <div class="col-sm-2 well">
+      <%i=0%>
+      <% while i<5 %>
+        <div class="well">
+          <%j=0%>
+          <%h=0%>
+            <%while j< rand(1..9)%>
+              <br>
+              <%j=j+1 %>
+            <%end%>
+          <p>ADS</p>
+            <%while h < j%>
+              <br>
+              <%h=h+1 %>
+            <%end%>
+        </div>
+      <%i=i+1 %>
+      <%end%>
     </div>
   </div>
 </div>
