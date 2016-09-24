@@ -31,15 +31,21 @@ body {
    background:#000000;
 }
 
+.footer_precise{
+  margin-left:-15px !important;
+   margin-right:15px !important;
+}
+
 .essai {
    text-color:#FFFAF0;
 }
 
 #myCarousel {
-    width: 100%;
+    width: 102.5%;
+    margin-left:-15px !important;
 }
 .carousel-inner .item {
-    width: 100%;
+    width: 101.5%;
     height: 400px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -97,6 +103,8 @@ footer {
       background-color: #000;
       color: white;
       padding: 10px;
+      width:102%;
+      margin-left:-15px !important;
     }
 .navbar {
       margin-bottom: 0;
