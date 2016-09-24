@@ -122,7 +122,7 @@ footer {
   .jumbotron {
       background-color:#f4511e !important;
       
-      color: #00000;
+      color: #f4511e;
       padding: 60px 20px;
     background-image: image-url("essai15.jpeg");
     background-position: 0% 25%;
@@ -148,4 +148,22 @@ footer {
   color: #f4511e;
 }
 
+.box1 {
+width: 101.5%;
+background-image: image-url("essai20.png");
+background-size: cover;
+background-repeat: no-repeat;
+  
+}
 
+.box2 {
+background-image: image-url("flat-landscape.jpg");
+  width: 101.5%;
+  height: 700px;
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-right: -10px;
+  
+}
